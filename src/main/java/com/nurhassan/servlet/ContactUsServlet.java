@@ -26,6 +26,7 @@ public class ContactUsServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		doGet(request, response);
 		
 		RequestDao r =new RequestDao();	
 		Request contact = new Request();

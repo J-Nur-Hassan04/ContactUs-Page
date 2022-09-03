@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("dashboard");
 		}else
 		{
-			response.sendRedirect("login.jsp");
+			doGet(request, response);
 		}
 		
 	}

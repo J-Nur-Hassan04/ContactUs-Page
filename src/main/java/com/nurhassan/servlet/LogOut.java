@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/logout")
 public class LogOut extends HttpServlet {
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		

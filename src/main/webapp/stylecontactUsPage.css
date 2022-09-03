@@ -1,0 +1,51 @@
+@charset "UTF-8";
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: lightblue;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+}
+.contact {
+    background-color: #eee;
+    opacity: 0.9;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    
+}
+#container {
+    border: 2px solid red;
+    margin: auto;
+    padding: 5vh;
+    width: 50vh; 
+    height: 60vh;
+    background-color: aliceblue;
+    font-size: 25px;
+
+}
+
+#container input
+{
+    width: 80%;
+    height: 3vh;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-bottom: 1.5vh;
+}
+
+#container textarea
+{
+    width: 80%;
+    height: 15vh;
+    border: 1px solid green;
+    border-radius: 5px;
+    margin-bottom: 1.5vh;
+}

@@ -1,0 +1,44 @@
+@charset "UTF-8";
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color:lightblue;
+    height: 100vh; 
+    display: flex; 
+}
+#container
+{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #eee;
+    border: 2px solid green;
+    width: 50%;
+    padding: 5vw;
+    margin: auto;
+}
+
+.contactus input
+{
+    font-size: 1.5vw;
+    color: brown;
+    background-color:aquamarine;
+    border-radius: 5px;
+    width: 15vw;
+    height: 3vw;
+}
+
+.login input
+{
+    font-size: 1.5vw;
+    color: brown;
+    background-color:aquamarine;
+    border-radius: 5px;
+    width: 15vw;
+    height: 3vw;
+}
