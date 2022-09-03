@@ -16,6 +16,9 @@
 		response.sendRedirect("login");
 	}
 	%>
+	<%
+	ArrayList<Request> allRequestList = (ArrayList<Request>) request.getAttribute("data");
+	%>
 
 
 	<table border="1" width="700">
@@ -28,7 +31,7 @@
 		</tr>
 
 		<%
-		ArrayList<Request> activeList = (ArrayList<Request>) request.getAttribute("data");
+		ArrayList<Request> activeList = allRequestList;
 		for (Request active : activeList) {
 			if (!active.isStatus()) {
 		%>
@@ -58,7 +61,7 @@
 		</tr>
 
 		<%
-		ArrayList<Request> archivedList = (ArrayList<Request>) request.getAttribute("data");
+		ArrayList<Request> archivedList = allRequestList;
 		for (Request archived : archivedList) {
 			if (archived.isStatus()) {
 		%>
