@@ -26,23 +26,22 @@ public class ContactUsServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
 		
-		RequestDao r =new RequestDao();	
+		RequestDao requestDao =new RequestDao();	
 		Request contact = new Request();
 		contact.setName(request.getParameter("customerName").trim());
 		contact.setEmail(request.getParameter("customerEmail").trim());
 		contact.setMessage(request.getParameter("customerMessage").trim());
 		contact.setStatus(false);
 		
-		if(r.storeContactData(contact))
+		if(requestDao.storeContactData(contact))
 		{
 			response.getWriter().println("Thanks for conatct with us");
-			response.sendRedirect("contactus.jsp");
+			doGet(request, response);
 		}else
 		{
 			response.getWriter().println("Data not saved");
-			response.sendRedirect("sontactus.jsp");
+			doGet(request, response);
 		}
 		
 	}
