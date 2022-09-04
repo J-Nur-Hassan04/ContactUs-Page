@@ -35,7 +35,7 @@ public class DashboardServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		RequestDao requestData = new RequestDao();
-		requestData.updateData(request.getParameter("email"));
+		requestData.updateData(Integer.parseInt(request.getParameter("requestId")));
 		response.sendRedirect("dashboard");
 		
 	}

@@ -24,10 +24,11 @@
 	<table border="1" width="700">
 		<h2>Active Table</h2>
 		<tr>
-			<td>Name</td>
-			<td>Email</td>
-			<td>Message</td>
-			<td>Status</td>
+			<th>id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Message</th>
+			<th>Status</th>
 		</tr>
 
 		<%
@@ -37,13 +38,14 @@
 		%>
 
 		<tr>
+			<td><%=active.getRequestId()%></td>
 			<td><%=active.getName()%></td>
 			<td><%=active.getEmail()%></td>
 			<td><%=active.getMessage()%></td>
 
 			<td><form action="dashboard" method="post">
 					<input type="submit" value=<%="Archive"%>> <input
-						name="email" type="hidden" value=<%=active.getEmail()%>>
+						name="requestId" type="hidden" value=<%=active.getRequestId()%>>
 				</form></td>
 		</tr>
 		<%
@@ -54,10 +56,11 @@
 	<table border="1" width="700">
 		<h2>Archived Table</h2>
 		<tr>
-			<td>Name</td>
-			<td>Email</td>
-			<td>Message</td>
-			<td>Status</td>
+			<th>id</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Message</th>
+			<th>Status</th>
 		</tr>
 
 		<%
@@ -67,13 +70,14 @@
 		%>
 
 		<tr>
+			<td><%=archived.getRequestId() %></td>
 			<td><%=archived.getName()%></td>
 			<td><%=archived.getEmail()%></td>
 			<td><%=archived.getMessage()%></td>
 
 			<td><form action="dashboard" method="post">
 					<input type="submit" value=<%="Active"%>> <input
-						name="email" type="hidden" value=<%=archived.getEmail()%>>
+						name="requestId" type="hidden" value=<%=archived.getRequestId()%>>
 				</form></td>
 		</tr>
 		<%

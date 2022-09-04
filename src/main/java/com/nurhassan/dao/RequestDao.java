@@ -52,14 +52,15 @@ public class RequestDao {
 			
 			while(result.next())
 			{	
-				Request contactData = new Request();
+				Request requestData = new Request();
 				
-				contactData.setName(result.getString(1));
-				contactData.setEmail(result.getString(2));
-				contactData.setMessage(result.getString(3));
-				contactData.setStatus(result.getBoolean(4));
+				requestData.setName(result.getString(1));
+				requestData.setEmail(result.getString(2));
+				requestData.setMessage(result.getString(3));
+				requestData.setStatus(result.getBoolean(4));
+				requestData.setRequestId(result.getInt(5));
 				
-				contactInfoList.add(contactData);
+				contactInfoList.add(requestData);
 			}
 			connection.close();
 			
@@ -69,30 +70,30 @@ public class RequestDao {
 		}
 		return contactInfoList;
 	}
-	public boolean updateData(String request)
+	public boolean updateData(int requestId)
 	{
 		try
 		{
 			Class.forName("org.postgresql.Driver");
 			Connection connection = DriverManager.getConnection(dataBaseURL, databaseUserName, databasePassword);
-			String getStatusQuery = "select status from contactinfo where email =?";
+			String getStatusQuery = "select status from contactinfo where id =?";
 			PreparedStatement getStatus = connection.prepareStatement(getStatusQuery);
-			getStatus.setString(1, request);
+			getStatus.setInt(1, requestId);
 			
 			ResultSet statusResult = getStatus.executeQuery();
 			
-			String updateStatusQuery = "update contactinfo set status = ? where email = ?";
+			String updateStatusQuery = "update contactinfo set status = ? where id = ?";
 			PreparedStatement setStatus = connection.prepareStatement(updateStatusQuery);
 			while(statusResult.next())
 			{
 				if(statusResult.getBoolean(1))
 				{
 					 setStatus.setBoolean(1, false);
-					 setStatus.setString(2, request);
+					 setStatus.setInt(2, requestId);
 				}else
 				{
 					 setStatus.setBoolean(1, true);
-					 setStatus.setString(2, request);
+					 setStatus.setInt(2, requestId);
 				}
 				
 			}

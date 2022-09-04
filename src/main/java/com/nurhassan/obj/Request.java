@@ -5,6 +5,7 @@ public class Request {
 	private String email;
 	private String message;
 	private boolean status;
+	private int requestId;
 	/**
 	 * @return the name
 	 */
@@ -52,6 +53,18 @@ public class Request {
 	 */
 	public void setStatus(boolean status) {
 		this.status = status;
+	}
+	/**
+	 * @return the requestId
+	 */
+	public int getRequestId() {
+		return requestId;
+	}
+	/**
+	 * @param requestId the requestId to set
+	 */
+	public void setRequestId(int requestId) {
+		this.requestId = requestId;
 	}
 	
 
